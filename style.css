@@ -8,7 +8,6 @@
     box-sizing: border-box;
 }
 
-
 body {
     background-color: #010221;
     font-family: 'Noto Sans', sans-serif;
@@ -17,8 +16,8 @@ body {
 
 section {
     position: relative;
-    margin: 1.5rem auto 1.5rem auto;
     border-radius: 1rem 3rem;
+    margin: 1.5rem auto 1.5rem auto;
 }
 .border {
     border: solid #EDAA25 1px;
@@ -44,8 +43,6 @@ div.menu header span {
     font-style: normal;
     font-size: 2rem;
 }
-
-
 
 /* hero-section */
 div.hero-section-content {
@@ -112,7 +109,6 @@ div.projects-section-content nav ul li {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: flex-end;
     transition: 0.3s;
 }
 div.projects-section-content nav ul li:hover {
@@ -163,8 +159,10 @@ div.find-more-section-content a:hover {
 /* footer */
 footer {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
 }
+
 footer nav ul {
     display: flex;
     gap: 1rem;
@@ -178,4 +176,113 @@ footer nav ul li a {
 }
 footer nav ul li a:hover {
     text-decoration: underline;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    div.wrapper {
+        padding: 1rem 2rem;
+    }
+    div.hero-section-content {
+        flex-direction: column;
+    }
+    div.hero-section-content {
+        align-items: normal;
+        gap:1rem;
+    }
+    div.hero-section-content-primary {
+        width: 100%;
+        height: 24rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    div.hero-section-content-primary h1 {
+        font-size: 2rem;
+    }
+    div.hero-section-content-secondary {
+        width: 100%;
+        height: auto;
+    }
+    div.projects-section-content nav ul li {
+        width: 100%;
+    }
+    footer {
+        flex-direction: column;
+    }
+    footer span {
+        text-align: center;
+    }
+    footer nav {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    div.wrapper {
+        padding: 1rem 2rem;
+    }
+    div.hero-section-content {
+        flex-direction: column;
+    }
+    div.hero-section-content {
+        align-items: normal;
+        gap:1rem;
+    }
+    div.hero-section-content-primary {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    div.hero-section-content-primary h1 {
+        font-size: 5rem;
+    }
+    div.hero-section-content-secondary {
+        width: 100%;
+        height: auto;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+    footer span {
+        text-align: center;
+    }
+    footer nav {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    div.hero-section-content {
+        flex-direction: row;
+    }
+    div.hero-section-content-primary h1 {
+        font-size: 3rem;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    div.hero-section-content {
+        flex-direction: row;
+    }
+    div.hero-section-content-primary h1 {
+        font-size: 6.4rem;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    div.hero-section-content {
+        flex-direction: row;
+    }
+    div.hero-section-content-primary h1 {
+        font-size: 6.4rem;
+    }
 }
