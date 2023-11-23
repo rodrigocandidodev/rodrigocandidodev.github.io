@@ -1,6 +1,22 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Junge&family=Noto+Sans:wght@400;700&display=swap');
 @import url("https://use.typekit.net/dng1lwr.css");
+
+:root {
+    --text-color-default-white: #ffffff;
+    --text-color-default-dark-blue: #010221;
+    --text-color-default-yellow: #EDAA25;
+
+    --bg-color-default-white: #ffffff;
+    --bg-color-default-dark-blue: #010221;
+    --bg-color-default-light-blue: #0f103e;
+    --bg-color-default-yellow: #EDAA25;
+    --bg-color-default-pill-magenta: #ff2edc;
+    --bg-color-default-pill-green: #00c96b;
+    
+    --border-color-default-yellow: #EDAA25;
+    --border-color-default-light-blue: #0f103e;
+}
 /* Reset */
 * {
     margin: 0;
@@ -9,9 +25,9 @@
 }
 
 body {
-    background-color: #010221;
+    background-color: var(--bg-color-default-dark-blue);
     font-family: 'Noto Sans', sans-serif;
-    color: #ffffff;
+    color: var(--text-color-default-white);
 }
 
 section {
@@ -19,8 +35,11 @@ section {
     border-radius: 1rem 3rem;
     margin: 1.5rem auto 1.5rem auto;
 }
+.active {
+    border: solid var(--border-color-default-yellow) 1px;
+}
 .border {
-    border: solid #EDAA25 1px;
+    border: solid var(--border-color-default-yellow) 1px;
     border-radius: 1rem 3rem;
 }
 div.wrapper {
@@ -32,6 +51,24 @@ div.menu {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+}
+div.menu nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+div.menu nav ul li {
+    list-style: none;
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+    transition: 0.3s;
+}
+div.menu nav ul li:hover{
+    background-color: var(--bg-color-default-light-blue);
+}
+div.menu nav ul li a {
+    text-decoration: none;
+    color: var(--text-color-default-white);
 }
 
 div.menu header {
@@ -76,7 +113,7 @@ div.hero-section-content-secondary {
 
 /* about section*/
 section.about-section {
-    color: #ffffff;
+    color: var(--text-color-default-white);
     padding: 1rem;
     border-radius: 1rem 3rem;
     text-align: center;
@@ -85,27 +122,36 @@ section.about-section {
 div.about-section-text {
     margin: 1rem auto 1rem auto;
     font-size: x-large;
-    
 }
 
 /* projects section*/
-section.projects-section {
-    color: #ffffff;
+section.projects-section, section.projects-page-section {
+    color: var(--text-color-default-white);
     padding: 1rem;
     text-align: center;
 }
-div.projects-section-content {
+div.projects-section-content, div.projects-page-section-content {
     margin: 1rem auto 1rem auto;
 }
+div.projects-section-title, div.projects-section-content nav {
+    padding: 1rem;
+}
+ 
 div.projects-section-content nav ul {
     display: flex;
     flex-direction: row;
     gap: 1rem;
     justify-content: center;
 }
-div.projects-section-content nav ul li {
+
+.projects-section-content a {
+    text-decoration: none;
+    color: var(--text-color-default-yellow);
+}
+
+div.projects-section-content nav ul li.projects-section-content-list-item {
     list-style: none;
-    background-color: #ffffff;
+    background-color: var(--bg-color-default-white);
     width: 10rem;
     height: 10rem;
     border-radius: 1rem 3rem;
@@ -116,28 +162,28 @@ div.projects-section-content nav ul li {
     transition: 0.3s;
     text-align: left;
 }
-div.projects-section-content nav ul li:hover {
+div.projects-section-content nav ul li.projects-section-content-list-item:hover {
     transform: scale(1.1);
 }
-div.projects-section-content nav ul li span {
-    color: #010221;
+div.projects-section-content nav ul li.projects-section-content-list-item span {
+    color: var(--text-color-default-dark-blue);
 }
-div.projects-section-content nav ul li a{
+div.projects-section-content nav ul li.projects-section-content-list-item a {
     text-decoration: none;
-    color: #ffffff;
-    background-color: #010221;
+    color: var(--text-color-default-white);
+    background-color: var(--bg-color-default-dark-blue);
     padding: 0.5rem;
     border-radius: 1rem;
     width: fit-content;
 }
-div.projects-section-content nav ul li a:hover {
-    background-image: linear-gradient(to right ,#010221,#EDAA25);
+div.projects-section-content nav ul li.projects-section-content-list-item a:hover {
+    background-image: linear-gradient(to right ,var(--bg-color-default-dark-blue),var(--bg-color-default-yellow));
 }
 
 /* find more section */
 section.find-more-section {
-    background-color: #EDAA25;
-    color: #010221;
+    background-color: var(--bg-color-default-yellow);
+    color: var(--text-color-default-dark-blue);
     padding: 1rem;
     text-align: center;
 }
@@ -150,17 +196,17 @@ div.find-more-section-content {
 }
 
 div.find-more-section-content a {
-    background-color: #010221;
+    background-color: var(--bg-color-default-dark-blue);
     padding: 0.5rem;
     width: fit-content;
     border-radius: 1rem;
     text-decoration: none;
-    color: #ffffff;
+    color: var(--text-color-default-white);
     transition: ease 0.5s;
 }
 
 div.find-more-section-content a:hover {
-    background-image: linear-gradient(to right ,#010221,#EDAA25);
+    background-image: linear-gradient(to right ,var(--bg-color-default-dark-blue),var(--bg-color-default-yellow));
 }
 
 /* footer */
@@ -183,7 +229,7 @@ footer nav li {
 }
 footer nav ul li a {
     text-decoration: none;
-    color: #EDAA25;
+    color: var(--text-color-default-yellow);
     font-size: xx-small;
 }
 footer nav ul li a:hover {
