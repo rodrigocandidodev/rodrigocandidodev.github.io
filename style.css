@@ -127,7 +127,6 @@ div.about-section-text {
 /* projects section*/
 section.projects-section, section.projects-page-section {
     color: var(--text-color-default-white);
-    padding: 1rem;
     text-align: center;
 }
 div.projects-section-content, div.projects-page-section-content {
